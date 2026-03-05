@@ -29,7 +29,7 @@ def get_wordle_word():
 def check_guess(guess, word_of_the_day):
     if len(guess) != 5:
         return 1
-    guess = guess.lower()
+    guess = guess
     feedback = []
     for i in range(5):
         if guess[i] == word_of_the_day[i]:
@@ -41,7 +41,11 @@ def check_guess(guess, word_of_the_day):
     return feedback
 
 def main():
-    guess = input()
+    guess = input().lower()
+
+    if guess == "giveup":
+        print(f"The word of the day was: {word_of_the_day.upper()}")
+        sys.exit()
 
     feedback = check_guess(guess, word_of_the_day)
     if feedback == 1:
@@ -52,7 +56,7 @@ def main():
         print(bcolors.get(feedback[i], '') + guess[i].upper() + bcolors['ENDC'], end=' ')
     print()  # New line after feedback
     
-    if guess.lower() == word_of_the_day:
+    if guess == word_of_the_day:
         print("Congratulations! You've guessed the word of the day!")
         sys.exit()
 
