@@ -6,6 +6,7 @@ A simple python script to play wordle in a terminal with colored output. Uses Th
 - Checks for input word length
 - Type `giveup` to show today's word of the day
 # How to run
+- Install `requests`: `pip install requests`
 - Type `python3 wordle.py` in the terminal while in the project folder
 *or*
 - Add `alias -g wordle="python3 /path/to/wordle.py` to your `.'yourshellname'rc` file to quickly access script from any terminal
